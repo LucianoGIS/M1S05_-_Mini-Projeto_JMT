@@ -97,7 +97,7 @@ public class AreaVerde {
 
     public String dadosDetalhados() {
         StringBuilder sb = new StringBuilder();
-        sb.append("=== DETALHES DA ÁREA VERDE ===\n");
+        sb.append("--- Detalhes da Área Verde ---\n");
         sb.append("ID: ").append(id).append("\n");
         sb.append("Nome: ").append(nome).append("\n");
         sb.append("Tipo de Vegetação: ").append(tipoVegetacao).append("\n");

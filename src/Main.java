@@ -16,12 +16,12 @@ public class Main {
     private static InputUtils input = new InputUtils(scanner);
 
     public static void main(String[] args) {
-        System.out.println("=== SISTEMA DE MAPEAMENTO DE ÁREAS VERDES DE JOINVILLE ===");
-
-        // Verifica se deseja criar dados de exemplo para teste
-        if (input.confirmar("Deseja criar alguns dados de exemplo para testar o sistema?")) {
-            criarDadosExemplo();
-        }
+//        System.out.println("--- Sistema de Mapeamento de Áreas Verdes de Joinville ---");
+//
+//        // Verifica se deseja criar dados de exemplo para teste
+//        if (input.confirmar("Deseja criar alguns dados de exemplo para testar o sistema?")) {
+//            criarDadosExemplo();
+//        }
 
         int opcao;
         do {
@@ -59,7 +59,7 @@ public class Main {
     }
 
     private static void exibirMenu() {
-        System.out.println("\n=== MENU PRINCIPAL ===");
+        System.out.println("\n--- Menu Principal ---");
         System.out.println("1- Listar Áreas Verdes");
         System.out.println("2- Avaliar Área Verde");
         System.out.println("3- Ver detalhe de uma Área Verde");
@@ -68,7 +68,7 @@ public class Main {
     }
 
     private static void listarAreasVerdes() {
-        System.out.println("\n=== ÁREAS VERDES CADASTRADAS ===");
+        System.out.println("\n--- Áreas Verdes Cadastradas---");
         List<AreaVerde> areas = areaVerdeService.listarAreasVerdes();
 
         if (areas.isEmpty()) {
@@ -82,7 +82,7 @@ public class Main {
     }
 
     private static void avaliarAreaVerde() {
-        System.out.println("\n=== AVALIAR ÁREA VERDE ===");
+        System.out.println("\n--- Avaliar Área Verde ---");
 
         listarAreasVerdes();
 
@@ -115,12 +115,12 @@ public class Main {
             System.out.println("Avaliação registrada com sucesso!");
             System.out.println("Média da avaliação: " + String.format("%.2f", avaliacao.calcularMediaAvaliacao()));
         } else {
-            System.out.println("Erro ao registrar avaliação.");
+            System.out.println("Erro ao registrar a avaliação.");
         }
     }
 
     private static void verDetalheAreaVerde() {
-        System.out.println("\n=== DETALHES DA ÁREA VERDE ===");
+        System.out.println("\n--- DETALHES DA ÁREA VERDE ---");
 
         listarAreasVerdes();
 
@@ -140,10 +140,10 @@ public class Main {
     }
 
     private static void cadastrarAreaVerde() {
-        System.out.println("\n=== CADASTRAR NOVA ÁREA VERDE ===");
+        System.out.println("\n--- Cadastrar Nova Área Verde ---");
 
         String nome = input.lerTexto("Nome da área verde: ");
-        String tipoVegetacao = input.lerTexto("Tipo de vegetação (árvores, arbustos, grama): ");
+        String tipoVegetacao = input.lerTexto("Tipo de vegetação (árvore, arbusto, gramínea): ");
         String horario = input.lerTexto("Horário de funcionamento: ");
         double latitude = input.lerDecimal("Latitude: ");
         double longitude = input.lerDecimal("Longitude: ");
@@ -153,7 +153,6 @@ public class Main {
         if (area != null) {
             System.out.println("Área verde cadastrada com sucesso! ID: " + area.getId());
 
-            // Adicionar atividades
             boolean continuarAddAtividades = true;
             while (continuarAddAtividades) {
                 String atividade = input.lerTexto("Digite uma atividade disponível (ou deixe em branco para finalizar): ");
@@ -165,53 +164,53 @@ public class Main {
                 }
             }
         } else {
-            System.out.println("Erro ao cadastrar área verde.");
+            System.out.println("Erro ao cadastrar a área verde.");
         }
     }
 
-    private static void criarDadosExemplo() {
-        // Parque da Cidade
-        AreaVerde parqueCidade = areaVerdeService.cadastrarAreaVerde(
-                "Parque da Cidade",
-                "Árvores nativas e gramado",
-                "Diariamente, das 6h às 22h",
-                -26.3045,
-                -48.8456
-        );
-        areaVerdeService.adicionarAtividade(parqueCidade.getId(), "Caminhada");
-        areaVerdeService.adicionarAtividade(parqueCidade.getId(), "Ciclismo");
-        areaVerdeService.adicionarAtividade(parqueCidade.getId(), "Parquinho infantil");
-
-        // Praça da Harmonia
-        AreaVerde pracaHarmonia = areaVerdeService.cadastrarAreaVerde(
-                "Praça da Harmonia",
-                "Arbustos ornamentais e flores",
-                "24 horas",
-                -26.3125,
-                -48.8389
-        );
-        areaVerdeService.adicionarAtividade(pracaHarmonia.getId(), "Piquenique");
-        areaVerdeService.adicionarAtividade(pracaHarmonia.getId(), "Quadra de vôlei de areia");
-
-        // Reserva Verde
-        AreaVerde reservaVerde = areaVerdeService.cadastrarAreaVerde(
-                "Reserva Verde Joinville",
-                "Mata Atlântica preservada",
-                "Das 8h às 17h, exceto segundas",
-                -26.2945,
-                -48.8512
-        );
-        areaVerdeService.adicionarAtividade(reservaVerde.getId(), "Trilhas ecológicas");
-        areaVerdeService.adicionarAtividade(reservaVerde.getId(), "Observação de aves");
-
-        // Adicionar algumas avaliações
-        avaliacaoService.avaliarAreaVerde(parqueCidade.getId(), 5, 4, 3, 4, 5);
-        avaliacaoService.avaliarAreaVerde(parqueCidade.getId(), 4, 5, 4, 4, 5);
-
-        avaliacaoService.avaliarAreaVerde(pracaHarmonia.getId(), 3, 4, 5, 3, 4);
-
-        avaliacaoService.avaliarAreaVerde(reservaVerde.getId(), 5, 5, 5, 4, 2);
-
-        System.out.println("Dados de exemplo criados com sucesso!");
-    }
+//    private static void criarDadosExemplo() {
+//        // Parque Natural Municipal da Caieira
+//        AreaVerde parqueCaieira = areaVerdeService.cadastrarAreaVerde(
+//                "Parque Natural Municipal da Caieira",
+//                "Árvores nativas (Sambaquis, Mangues e Restingas) e gramado",
+//                "Diariamente, das 08h às 18h",
+//                -26.314218,
+//                -48.795909
+//        );
+//        areaVerdeService.adicionarAtividade(parqueCaieira.getId(), "Caminhada");
+//        areaVerdeService.adicionarAtividade(parqueCaieira.getId(), "Ciclismo");
+//        areaVerdeService.adicionarAtividade(parqueCaieira.getId(), "Parquinho infantil");
+//
+//        // Zoobotânico Joinville
+//        AreaVerde pracaZoo = areaVerdeService.cadastrarAreaVerde(
+//                "Zoobotânico Joinville",
+//                "Arbustos ornamentais e flores",
+//                "24 horas",
+//                -26.312534,
+//                -48.838956
+//        );
+//        areaVerdeService.adicionarAtividade(pracaZoo.getId(), "Área de lazer na grama");
+//        areaVerdeService.adicionarAtividade(pracaZoo.getId(), "Quadra de areia");
+//
+//        // Parque da Cidade (Setor Guanabara)
+//        AreaVerde parqueCidade = areaVerdeService.cadastrarAreaVerde(
+//                "Reserva Verde Joinville",
+//                "Mata Atlântica preservada",
+//                "Das 8h às 17h, exceto segundas",
+//                -26.2945,
+//                -48.8512
+//        );
+//        areaVerdeService.adicionarAtividade(parqueCidade.getId(), "Trilhas ecológicas");
+//        areaVerdeService.adicionarAtividade(ParqueCidade.getId(), "Observação de aves");
+//
+//        // Adicionar algumas avaliações
+//        avaliacaoService.avaliarAreaVerde(parqueCaieira.getId(), 5, 4, 3, 4, 5);
+//        avaliacaoService.avaliarAreaVerde(parqueCaieira.getId(), 4, 5, 4, 4, 5);
+//
+//        avaliacaoService.avaliarAreaVerde(pracaZoo.getId(), 3, 4, 5, 3, 4);
+//
+//        avaliacaoService.avaliarAreaVerde(parqueCidade.getId(), 5, 5, 5, 4, 2);
+//
+//        System.out.println("Dados de exemplo criados com sucesso!");
+//    }
 }

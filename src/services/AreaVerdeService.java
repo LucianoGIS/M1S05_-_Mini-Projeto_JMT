@@ -14,7 +14,7 @@ public class AreaVerdeService {
 
     public AreaVerde cadastrarAreaVerde(String nome, String tipoVegetacao, String horarioFuncionamento,
                                         double latitude, double longitude) {
-        // Cria e salva a área verde
+
         AreaVerde areaVerde = new AreaVerde();
         areaVerde.setNome(nome);
         areaVerde.setTipoVegetacao(tipoVegetacao);
@@ -22,7 +22,6 @@ public class AreaVerdeService {
 
         AreaVerde areaSalva = AreaVerdeRepository.adicionar(areaVerde);
 
-        // Cria e salva a localização associada à área verde
         localizacaoService.cadastrarLocalizacao(latitude, longitude, areaSalva.getId());
 
         return areaSalva;
