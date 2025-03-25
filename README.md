@@ -45,7 +45,7 @@ Projeto acadêmico (M1S05) que implementa um sistema via terminal para:
 
 ---
 
-## 🛠Como Executar  
+## Como Executar  
 
 1. Clone o repositório  
 2. Execute:  
