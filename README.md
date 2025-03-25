@@ -47,6 +47,6 @@ cd src && javac Main.java && java Main
 ## 📜 Licença  
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Java-17%2B-blue?logo=java" alt="Java 17+">
+  <img src="https://img.shields.io/badge/Java-21-orange" alt="Java 21">
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License MIT">
 </div>
