@@ -45,7 +45,7 @@ Projeto acadêmico (M1S05) que implementa um sistema via terminal para:
 
 ---
 
-## 🛠️ Como Executar  
+## 🛠Como Executar  
 
 1. Clone o repositório  
 2. Execute:  
@@ -55,7 +55,7 @@ cd src && javac Main.java && java Main
 
 ---
 
-## 📜 Licença  
+## Licença  
 
 <div align="center">
   <img src="https://img.shields.io/badge/Java-21-orange" alt="Java 21">
