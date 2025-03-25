@@ -1,14 +1,16 @@
 # Mapeamento de Áreas Verdes de Joinville  
 
-**Sistema de terminal Java para cadastrar, avaliar e consultar parques de Joinville com critérios sustentáveis** 
+**Sistema em Java via terminal para cadastrar, avaliar e consultar parques de Joinville com critérios sustentáveis** 
 
 ---
 
 ## Introdução  
-Projeto acadêmico (M1S05) que implementa um sistema via terminal para:  
-- Cadastrar áreas verdes com localização e atividades  
-- Avaliar parques com 5 critérios ecológicos  
-- Consultar dados através de menu interativo
+Projeto acadêmico referento ao "Módulo 1 - Defesa de Mini-Projeto" do programa Joinville Mais Tec, idealizado pela Prefeitura de Joinville em parceria com o SENAI, ACIJ, Join.valle e Sebrae. 
+
+O sistema em Java implementa uma interface via terminal para:
+- Cadastrar áreas verdes com localização e atividades
+- Avaliar parques com base em cinco critérios ecológicos
+- Consultar dados por meio de um menu interativo
 
 ---
 
